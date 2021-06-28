@@ -12,11 +12,7 @@ data "aws_availability_zones" "azs" {}
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.2.0"
-  module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "3.2.0"
-  # insert the 19 required variables here
-}
+
   name = "dev-vpc"
   cidr = var.vpc_cidr_range
 
@@ -25,7 +21,7 @@ module "vpc" {
 
   # Database subnets
   database_subnets = var.database_subnets
-  database_subnets_group_tags = {
+  database_subnet_group_tags = {
       subnet_type = "database"
   }
 

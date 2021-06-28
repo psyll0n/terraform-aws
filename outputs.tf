@@ -7,7 +7,7 @@ output "vpc_id" {
 }
 
 output "db_subnet_group" {
-    value = vpc.database_subnet_group
+    value = module.vpc.database_subnet_group
 }
 
 output "public_subnets" {
